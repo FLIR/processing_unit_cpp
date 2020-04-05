@@ -32,7 +32,9 @@ set(3RDPARTY_PATH "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # websockets backend
-add_subdirectory(${3RDPARTY_PATH}/Simple-WebSocket-Server)
+if (NOT TARGET simple-websocket-server)
+    add_subdirectory(${3RDPARTY_PATH}/Simple-WebSocket-Server)
+endif() 
 
 add_subdirectory(${3RDPARTY_PATH}/spdlog)
 
