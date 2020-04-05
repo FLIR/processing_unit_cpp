@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.5.1)
 
 project(processing_unit)
 set(CMAKE_CXX_STANDARD 11)
@@ -109,8 +109,6 @@ endif()
 
 target_link_libraries(processing_unit
     PRIVATE 
-    ${CMAKE_DL_LIBS} 
-    ${OpenMP_LIBS}     
     simple-websocket-server
     spdlog
     )
