@@ -38,8 +38,6 @@ endif()
 
 add_subdirectory(${3RDPARTY_PATH}/spdlog)
 
-add_subdirectory(${3RDPARTY_PATH}/msgpack-c)
-
 
 source_group("source" REGULAR_EXPRESSION .*\\.cpp)
 source_group("headers" REGULAR_EXPRESSION .*\\.h)
@@ -122,14 +120,3 @@ target_include_directories(processing_unit
     PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/msgpack-c/include
 )
-      
-
-# enable_testing()
-# add_subdirectory(tests)
-
-# option(BUILD_TESTS "Build tests" OFF)
-# if (BUILD_TESTS)
-#   enable_testing()
-#   add_subdirectory(tests)
-# endif()
-
