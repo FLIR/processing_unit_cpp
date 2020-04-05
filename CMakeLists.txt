@@ -94,6 +94,7 @@ set_property(TARGET processing_unit PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET processing_unit PROPERTY CXX_EXTENSIONS OFF)
 
 find_package(Boost REQUIRED)
+find_package(OpenSSL REQUIRED) 
 
  # ----------------------------------------------------------------------------
  # GNU and Clang compiler specifics
