@@ -1,0 +1,9 @@
+[submodule "3rdparty/Simple-WebSocket-Server"]
+	path = 3rdparty/Simple-WebSocket-Server
+	url = https://github.com/eidheim/Simple-WebSocket-Server.git
+[submodule "3rdparty/spdlog"]
+	path = 3rdparty/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "3rdparty/msgpack-c"]
+	path = 3rdparty/msgpack-c
+	url = https://github.com/msgpack/msgpack-c.git
