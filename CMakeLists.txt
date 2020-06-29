@@ -118,4 +118,5 @@ target_link_libraries(processing_unit
 target_include_directories(processing_unit
     PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/msgpack-c/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/Simple-WebSocket-Server
 )

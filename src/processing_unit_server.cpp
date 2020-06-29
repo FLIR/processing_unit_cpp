@@ -10,7 +10,6 @@
 #include <iostream>
 #include <sstream>
 
-#include <vms_agent.hpp>
 
 #include <iostream>
 #include <mutex>
@@ -30,6 +29,12 @@ const std::string NameLogger("MainLogger");
 
 bool ProcessingUnitServer::StartProcessingUnitServer()
 {
+    //close previous season if exist
+    if(vmsAgent)
+    {
+        delete vmsAgent;
+        vmsAgent = nullptr;
+    }
     // Setup logger
     auto ConsoleSink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
     ConsoleSink->set_level(spdlog::level::trace); // only shows warnings or errors
@@ -55,12 +60,23 @@ bool ProcessingUnitServer::StartProcessingUnitServer()
 	spdlog::get(NameLogger)->info(Stream.str());
 
 	// Attach our callbacks to the agent and start it up. Ctrl+C to exit.
-	bool success = VmsAgent().start(_host, _port);
+    vmsAgent = new VmsAgent();
+	bool success = vmsAgent->start(_host, _port);
 	if (!success) {
 		spdlog::get(NameLogger)->error("Failed to start agent");
 		return false;
 	}
 
 	return true;
+}
+
+void ProcessingUnitServer::StopProcessingUnitServer()
+{
+     //close  season if exist
+    if(vmsAgent)
+    {
+        delete vmsAgent;
+        vmsAgent = nullptr;
+    }
 }
 }
