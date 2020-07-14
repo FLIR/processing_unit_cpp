@@ -164,6 +164,8 @@ void JobConnection::Input(ConnectionPtr Conn)
             m_isJobStoped = true;
             output_queue_lock.unlock();
             m_ConVarOutputQueue.notify_one();
+            input_queue_lock.unlock();
+            break;
         }
 
         input_queue_lock.unlock();
